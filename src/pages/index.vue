@@ -10,7 +10,7 @@ const state = computed(() => play.board)
 
 <template>
   <div>
-    MineWeeper
+    MineWeeper2
 
     <div p5>
       <div v-for="(row, y) in state" :key="y" flex="~" items-center justify-center>
