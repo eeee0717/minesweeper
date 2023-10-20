@@ -27,8 +27,8 @@ function getBlockClass(block: BlockState) {
 <template>
   <button
     flex="~"
-    h-8
-    w-8
+    min-h-8
+    min-w-8
     m="0.5"
     items-center
     justify-center

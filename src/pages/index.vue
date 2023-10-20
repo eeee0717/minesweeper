@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import MineBlock from '../components/MineBlock.vue'
 import { isDev, toggleDev } from '~/composables'
 import { GamePlay } from '~/composables/logic'
 
-const play = new GamePlay(5, 5, 10)
+const play = new GamePlay(5, 5, 3)
 useStorage('vuesweeper-state', play.state)
 const state = computed(() => play.board)
 const mineCount = computed(() => {
@@ -17,11 +16,19 @@ watchEffect(() => {
 <template>
   <div>
     MineWeeper2
+    <div w-full overflow-hidden p5>
+      <div
+        v-for="(row, y) in state"
+        :key="y"
+        flex="~"
 
-    <div p5>
-      <div v-for="(row, y) in state" :key="y" flex="~" items-center justify-center>
+        ma w-max items-center justify-center
+      >
         <MineBlock
-          v-for="(block, x) in row" :key="x" :block="block" @click="play.onClick(block)"
+          v-for="(block, x) in row"
+          :key="x"
+          :block="block"
+          @click="play.onClick(block)"
           @contextmenu.prevent="play.onRightClick(block)"
         />
       </div>
@@ -39,5 +46,6 @@ watchEffect(() => {
         RESET
       </button>
     </div>
+    <Confetti :passed="play.state.value.gameState === 'won'" />
   </div>
 </template>

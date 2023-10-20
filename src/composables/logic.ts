@@ -141,11 +141,9 @@ export class GamePlay {
       if (blocks.some(block => block.revealed && block.flagged)) {
         this.state.value.gameState = 'lost'
         this.showAllMines()
-        alert('lost')
       }
       else {
         this.state.value.gameState = 'won'
-        alert('won')
       }
     }
   }
