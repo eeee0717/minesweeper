@@ -64,7 +64,7 @@ watchEffect(() => {
         {{ mineRest }}
       </div>
     </div>
-    <div w-full overflow-hidden p5>
+    <div w-full p5>
       <div
         v-for="(row, y) in state"
         :key="y"
