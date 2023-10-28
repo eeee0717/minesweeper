@@ -11,5 +11,13 @@
       target="_blank"
       title="GitHub"
     />
+
+    <a
+      i-carbon-home icon-btn
+      rel="noreferrer"
+      href="https://chentao0717.me"
+      target="_self"
+      title="Home"
+    />
   </nav>
 </template>
